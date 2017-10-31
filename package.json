@@ -1,0 +1,36 @@
+{
+  "name": "nanogenmo2017",
+  "description": "A fantasy/scifi novel generator for NaNoGenMo 2017",
+  "version": "0.0.1",
+  "main": "build/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "babel src -d build",
+    "start": "npm run build && node build/"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Alamantus/NaNoGenMo2017.git"
+  },
+  "keywords": [
+    "NaNoGenMo",
+    "novel",
+    "generator",
+    "procedural",
+    "generation"
+  ],
+  "author": "Robbie Antenesse <dev@alamantus.com> (http://robbie.antenesse.net)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Alamantus/NaNoGenMo2017/issues"
+  },
+  "homepage": "https://github.com/Alamantus/NaNoGenMo2017#readme",
+  "dependencies": {
+    "js-yaml": "^3.10.0",
+    "seedrandom": "^2.4.3"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-preset-env": "^1.6.1"
+  }
+}
