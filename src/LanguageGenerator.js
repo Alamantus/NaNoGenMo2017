@@ -1,4 +1,5 @@
 import {randomArrayValue} from './helpers';
+import sentenceBuilder from './sentenceBuilder';
 
 const MAX_RETRIES = 10;
 const MAX_SYLLABLES = 6;
@@ -9,6 +10,7 @@ class LanguageGenerator {
     this.randomArrayValue = (array) => randomArrayValue(array, this.random);
     this.phonology = this.generatePhonology();
     this.phonotactics = this.generatePhonotactics();
+    this.lexicon = this.generateLexicon();
   }
 
   generatePhonology (tries = 0) {
@@ -164,8 +166,159 @@ class LanguageGenerator {
     return word;
   }
 
+  generateLexicon () {
+    const allowDuplicates = this.random() > 0.4;
+    const nouns = [],
+      adjectives = [],
+      adverbs = [],
+      verbs = [],
+      prepositions = [],
+      conjunctions = [];
+    const adjectiveAffix = (this.random() > 0.6) ? null : {
+      affix: (this.random() < 0.6) ? 'suffix' : 'prefix',
+      value: this.generateSyllable(),
+    };
+    const adverbAffix = (this.random() > 0.5) ? null : {
+      affix: (this.random() < 0.6) ? 'suffix' : 'prefix',
+      value: this.generateSyllable(),
+    };
+
+    const nounTries = this.random() * 200;
+    for (let n = 0; n < nounTries; n++) {
+      const word = this.generateWord();
+      const isUnique = !nouns.includes(word);
+
+      if (allowDuplicates || isUnique) {
+        nouns.push(word);
+      }
+
+      // Create derivatives?
+      if (this.random() > 0.8 && adjectiveAffix) {
+        const adjectiveForm = (adjectiveAffix.affix === 'prefix') ? adjectiveAffix.value + word : word + adjectiveAffix.value;
+        adjectives.push(this.splitNonBlendedLetters(adjectiveForm));
+      }
+      if (this.random() > 0.9 && adverbAffix) {
+        const adverbForm = (adverbAffix.affix === 'prefix') ? adverbAffix.value + word : word + adverbAffix.value;
+        adverbs.push(this.splitNonBlendedLetters(adverbForm));
+      }
+    }
+
+    const verbTries = this.random() * 200;
+    for (let v = 0; v < verbTries; v++) {
+      const word = this.generateWord();
+      const isUnique = !nouns.includes(word) && !verbs.includes(word);
+
+      if (allowDuplicates || isUnique) {
+        verbs.push(word);
+      }
+
+      // Create derivatives?
+      if (this.random() > 0.9 && adjectiveAffix) {
+        const adjectiveForm = (adjectiveAffix.affix === 'prefix') ? adjectiveAffix.value + word : word + adjectiveAffix.value;
+        adjectives.push(this.splitNonBlendedLetters(adjectiveForm));
+      }
+    }
+
+    const adjectiveTries = this.random() * 300;
+    for (let adj = 0; adj < adjectiveTries; adj++) {
+      const wordOptions = {};
+      // If there is an affix, give it ~50% chance of adding to non-derivative adjectives.
+      if (adjectiveAffix && this.random() > 0.5) wordOptions[adjectiveAffix.affix] = adjectiveAffix.value;
+      const word = this.generateWord(wordOptions);
+      const isUnique = !nouns.includes(word) && !verbs.includes(word)
+        && !adjectives.includes(word);
+
+      if (allowDuplicates || isUnique) {
+        adjectives.push(word);
+      }
+
+      // Create derivatives?
+      if (this.random() > 0.7 && adverbAffix) {
+        const adverbForm = (adverbAffix.affix === 'prefix')
+          ? adverbAffix.value + word
+          : word + adverbAffix.value;
+        adverbs.push(this.splitNonBlendedLetters(adverbForm));
+      }
+    }
+
+    const adverbTries = this.random() * 150;
+    for (let adj = 0; adj < adverbTries; adj++) {
+      const wordOptions = {};
+      // If there is an affix, give it ~70% chance of adding to non-derivative adverbs.
+      if (adverbAffix && this.random() > 0.3) wordOptions[adverbAffix.affix] = adverbAffix.value;
+      const word = this.generateWord(wordOptions);
+      const isUnique = !nouns.includes(word) && !verbs.includes(word)
+        && !adjectives.includes(word) && !adverbs.includes(word);
+
+      if (allowDuplicates || isUnique) {
+        adverbs.push(word);
+      }
+    }
+
+    const prepositionTries = this.random() * 50;
+    for (let adj = 0; adj < prepositionTries; adj++) {
+      const wordOptions = {
+        numSyllables: Math.ceil(this.random() * 2),
+      };
+      const word = this.generateWord(wordOptions);
+      const isUnique = !nouns.includes(word) && !verbs.includes(word)
+        && !adjectives.includes(word) && !adverbs.includes(word)
+        && !prepositions.includes(word);
+
+      if (allowDuplicates || isUnique) {
+        prepositions.push(word);
+      }
+    }
+
+    const conjunctionTries = this.random() * 20;
+    for (let adj = 0; adj < conjunctionTries; adj++) {
+      const wordOptions = {
+        numSyllables: 1,
+      };
+      const word = this.generateWord(wordOptions);
+      const isUnique = !nouns.includes(word) && !verbs.includes(word)
+        && !adjectives.includes(word) && !adverbs.includes(word)
+        && !prepositions.includes(word) && !conjunctions.includes(word);
+
+      if (allowDuplicates || isUnique) {
+        conjunctions.push(word);
+      }
+    }
+
+    return {
+      nouns,
+      adjectives,
+      adverbs,
+      verbs,
+      prepositions,
+      conjunctions,
+    };
+  }
+
   test () {
-    return this.generateWord();
+    const subject = {
+      noun: this.lexicon.nouns[Math.floor(this.random() * this.lexicon.nouns.length)],
+    };
+    const action = {
+      verb: this.lexicon.verbs[Math.floor(this.random() * this.lexicon.verbs.length)],
+    };
+    const object = {};
+    const punctuation = (this.random() > 0.85) ? '!' : ((this.random() > 0.7) ? '?' : '.');
+
+    if (this.random() > 0.6) {
+      const adjective = Math.floor(this.random() * this.lexicon.adjectives.length);
+      subject.adjective = this.lexicon.adjectives[adjective];
+    }
+    if (this.random() > 0.85) {
+      const adverb = Math.floor(this.random() * this.lexicon.adverbs.length);
+      action.adverb = this.lexicon.adverbs[adverb];
+    }
+    return sentenceBuilder({
+      subject,
+      action,
+      object,
+      punctuation,
+    });
   }
 }
 
