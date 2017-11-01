@@ -103,6 +103,57 @@ class LanguageGenerator {
     return (syllable !== '') ? syllable : this.generateSyllable();
   }
 
+  generateWord ({
+    numSyllables = undefined,
+    prefix = '',
+    suffix = '',
+  } = {}) {
+    const numberOfSyllables = numSyllables || Math.ceil(this.random() * this.phonotactics.maxSyllables);
+    let syllables = [this.generateSyllable()];
+
+    for (let i = 1; i < numberOfSyllables; i++) {
+      let syllable = this.generateSyllable();
+      let lastLetter = syllables[syllables.length - 1].substr(-1);
+
+      let tries = 0;
+      while (this.phonotactics.overlapRestrictions.includes(lastLetter + syllable.substr(-1)) && tries < MAX_RETRIES) {
+        syllable = this.generateSyllable();
+        tries++;
+      }
+
+      syllables.push(syllable);
+    }
+
+    return this.splitNonBlendedLetters(prefix + syllables.join('') + suffix);
+  }
+
+  splitNonBlendedLetters (word) {
+    if (!this.phonotactics.blendConsonants || ! this.phonotactics.blendVowels) {
+      let fixedWord = '';
+      word.split('').forEach((letter, index) => {
+        fixedWord += letter;
+
+        if (index + 1 < word.length) {
+          let nextLetter = word.substr(index + 1, 1);
+          const breakConsonants = this.phonology.consonants.includes(letter)
+            && this.phonology.consonants.includes(nextLetter)
+            && ! this.phonotactics.blendConsonants;
+          const breakVowel = this.phonology.vowels.includes(letter)
+            && this.phonology.vowels.includes(nextLetter)
+            && ! this.phonotactics.blendVowels;
+
+          if (breakConsonants || breakVowels) {
+            fixedWord += '\'';
+          }
+        }
+      }
+
+      return fixedWord;
+    }
+
+    return word;
+  }
+
   test () {
     return this.generateSyllable();
   }
