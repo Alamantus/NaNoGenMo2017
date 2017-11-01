@@ -1,10 +1,12 @@
 import {randomArrayValue} from './helpers';
 
+const MAX_RETRIES = 10;
+const MAX_SYLLABLES = 6;
+
 class LanguageGenerator {
   constructor (random) {
     this.random = random;
     this.randomArrayValue = (array) => randomArrayValue(array, this.random);
-    this.maxRetries = 10;
     this.phonology = this.generatePhonology();
     this.phonotactics = this.generatePhonotactics();
   }
@@ -33,6 +35,9 @@ class LanguageGenerator {
       nucleus = [],
       coda = [],
       overlapRestrictions = [];
+    const maxSyllables = Math.ceil(this.random() * MAX_SYLLABLES);
+    const blendConsonants = this.random() > 0.75;
+    const blendVowels = this.random() > 0.5;
 
     if (this.random() > 0.5) onset.push(null);
     if (this.random() > 0.5) coda.push(null);
@@ -68,6 +73,9 @@ class LanguageGenerator {
       nucleus,
       coda,
       overlapRestrictions,
+      maxSyllables,
+      blendConsonants,
+      blendVowels,
     }
   }
 
@@ -78,14 +86,14 @@ class LanguageGenerator {
 
     if (onset && nucleus) {
       let tries = 0;
-      while (this.phonotactics.overlapRestrictions.includes(onset + nucleus) && tries < this.maxRetries) {
+      while (this.phonotactics.overlapRestrictions.includes(onset + nucleus) && tries < MAX_RETRIES) {
         nucleus = this.randomArrayValue(this.phonotactics.nucleus);
         tries++;
       }
     }
     if (nucleus && coda) {
       let tries = 0;
-      while (this.phonotactics.overlapRestrictions.includes(nucleus + coda) && tries < this.maxRetries) {
+      while (this.phonotactics.overlapRestrictions.includes(nucleus + coda) && tries < MAX_RETRIES) {
         coda = this.randomArrayValue(this.phonotactics.coda);
         tries++;
       }
