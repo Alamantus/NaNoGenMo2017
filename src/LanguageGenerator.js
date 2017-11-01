@@ -1,8 +1,10 @@
 import {randomArrayValue} from './helpers';
-import sentenceBuilder from './sentenceBuilder';
+import {
+  MAX_RETRIES,
+  MAX_SYLLABLES,
+} from './constants';
 
-const MAX_RETRIES = 10;
-const MAX_SYLLABLES = 6;
+import sentenceBuilder from './sentenceBuilder';
 
 class LanguageGenerator {
   constructor (random) {
