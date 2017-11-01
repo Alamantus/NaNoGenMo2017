@@ -3,5 +3,5 @@ export const randomArrayValue = (array, random = Math.random) => {
 }
 
 export const capitalize = word => {
-  return word.substr(0, 1).toUppercase() + word.substr(1);
+  return word.substr(0, 1).toUpperCase() + word.substr(1);
 }
