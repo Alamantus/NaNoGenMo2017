@@ -40,496 +40,80 @@ positive:
   - earnest
   - easygoing
   - elegant
-
-  - embellished
-  - eminent
-  - emotional
-  - emotionless
-  - empirical
-  - empty
-  - empty-headed
-  - enchanted
-  - enchanting
-  - energetic
-  - English
-  - enlightened
-  - enormous
-  - enraged
-  - envious
-  - ethereal
-  - ethical
-  - euphoric
-  - evergreen
-  - everlasting
-  - evil
-  - exalted
   - excellent
   - excitable
-  - excited
-  - exciting
-  - exhausted
-  - exhaustingly energetic
-  - exotic
-  - expensive
   - experienced
-  - expert
-  - extra-large
-  - extra-small
-  - extroverted
   - fabulous
-  - failing
-  - faint
   - fair
   - faithful
-  - fake
-  - false
   - familiar
-  - famous
-  - fancy
-  - fantastic
-  - fast
-  - fat
-  - fatal
-  - fatherly
-  - fatherly
   - favorable
-  - favorite
-  - fearful
   - fearless
   - feisty
-  - feline
-  - feminine
-  - fickle
-  - fiendish
-  - fighting
-  - filthy
-  - fine
-  - finished
-  - Finnish
-  - firm
-  - fitting
-  - fixed
-  - flaky
-  - flamboyant
-  - flaming
-  - flashy
-  - flat
-  - flawed
   - flawless
-  - flickering
-  - flimsy
-  - flippant
-  - floating
-  - flowery
-  - fluffy
-  - fluid
-  - flustered
-  - flying
   - focused
-  - foolhardy
-  - foolish
-  - forceful
-  - forked
-  - formal
-  - forsaken
-  - fragile
-  - fragrant
-  - frail
-  - frayed
-  - French
   - fresh
   - friendly
-  - frightened
-  - frightening
-  - frigid
-  - frilly
-  - frivolous
-  - frizzy
-  - frosty
-  - frozen
-  - frugal
   - fruitful
-  - full-grown
-  - fully-functional
-  - fumbling
-  - fuming
-  - fundamentalist
   - funny
-  - fussy
-  - fuzzy
-  - gargantuan
-  - gaseous
   - generous
   - gentle
   - genuine
-  - German
-  - ghostly
-  - giant
-  - giddy
-  - gifted
-  - gigantic
-  - gilded
-  - girly
   - giving
-  - glamorous
-  - glaring
-  - glass
-  - glassy-eyed
-  - gleaming
-  - gleeful
-  - glistening
-  - glittering
-  - glittery
-  - glossy
-  - glum
-  - gold
-  - golden
   - good-natured
-  - gorgeous
-  - graceful
-  - gracious
-  - grateful
-  - grave
-  - gray
-  - grayscale
   - great
-  - greedy
-  - Greek
-  - green
   - gregarious
-  - grizzled
-  - gross
-  - grotesque
-  - grouchy
-  - growing
-  - growling
-  - grubby
-  - gruesome
-  - grumbling
-  - grumpy
-  - guilty
-  - guilty-looking
-  - gullible
-  - gummy
-  - gun-toting
-  - hairy
-  - hand-drawn
-  - hand-painted
-  - handmade
   - handsome
   - handy
   - happy
   - happy-go-lucky
-  - hard
-  - hard-to-find
-  - harmful
-  - harmless
   - harmonious
-  - harsh
-  - hasty
-  - hateful
-  - haunting
   - healthy
-  - heavenly
-  - heavy
-  - hefty
   - helpful
-  - helpless
-  - hidden
-  - hideous
-  - high-level
   - hilarious
-  - historically accurate
-  - hoarse
-  - hollow
   - homely
   - hopeful
-  - horrible
   - hospitable
-  - hot
-  - huge
   - humble
-  - humiliating
-  - humming
-  - humongous
-  - Hungarian
-  - hungry
-  - hurtful
-  - husky
-  - icky
-  - icy
-  - ideal
-  - idealistic
-  - idiotic
-  - idle
-  - idolized
-  - ignorant
-  - ill
-  - ill-fated
-  - ill-informed
-  - illegal
-  - illiterate
-  - illustrious
-  - imaginary
   - imaginative
-  - imbecillic
-  - immaculate
-  - immaterial
-  - immense
-  - impartial
-  - impassioned
-  - impeccably-dressed
-  - imperfect
   - imperturbable
-  - impish
-  - impolite
   - important
-  - impossible
-  - impractical
-  - impressionable
-  - impressive
-  - improbable
-  - impure
-  - Incan
-  - incomparable
-  - incompatible
-  - incomplete
-  - inconsequential
-  - incredible
-  - indelible
-  - Indian
-  - indolent
-  - indomible
-  - inexperienced
-  - infamous
-  - infantile
-  - infatuated
-  - inferior
-  - infinite number of
-  - informal
-  - ingenious
   - innocent
-  - insecure
-  - insidious
-  - insignificant
-  - insistent
-  - instructive
   - intelligent
   - interesting
-  - international
   - intrepid
-  - intrusive
-  - ironclad
-  - irresponsible
-  - irritating
-  - Italian
-  - itchy
-  - jaded
-  - jagged
-  - Japanese
   - jaunty
-  - jealous
-  - jeering
-  - jingling
-  - jittery
-  - jolly
   - jovial
-  - joyful
-  - joyous
-  - jubilant
-  - judicious
-  - juicy
-  - jumbo
-  - jumping
-  - jumpy
-  - juvenile
-  - kaleidoscopic
-  - keen-eyed
-  - Kenyan
+  - jolly
   - kind
   - kindhearted
-  - klutzy
-  - knobby
-  - knotted
-  - knowledgeable
-  - kooky
-  - kosher
-  - lame
-  - lanky
-  - large
-  - lawful
-  - lazy
-  - leafy
-  - lean
-  - lean, mean fighting
-  - legalistic
   - lighthearted
-  - lightweight
   - likable
-  - limp
-  - limping
-  - liquid
-  - listless
-  - little
   - lively
-  - livid
-  - living
-  - loathsome
-  - lone
-  - lonely
-  - lonesome
-  - long
-  - long-winded
-  - loose
-  - lopsided
-  - lost
-  - loud
   - lovable
   - lovely
   - loving
-  - lowbrow
   - loyal
   - lucky
-  - lumbering
-  - luminous
-  - lumpy
-  - lustrous
-  - luxurious
-  - lying
-  - lyrical
-  - mad
-  - made-up
-  - magenta
-  - magnificent
-  - majestic
-  - major
-  - mammoth
-  - manly
-  - married
-  - marvelous
-  - masculine
-  - massive
-  - mature
-  - Mayan
-  - meager
-  - mean
-  - meaty
-  - medical
   - meek
   - mellow
-  - melodic
   - memorable
-  - menacing
   - merry
-  - messy
-  - metallic
-  - mindless
-  - miniature
-  - mink-like
-  - minty
-  - miserable
-  - miserly
-  - misguided
-  - misty
-  - modern
-  - modernized
   - modest
-  - moist
-  - monstrous
-  - morally-driven
-  - moronic
-  - mortified
-  - motherly
-  - motionless
-  - muddy
-  - muffled
-  - multicolored
-  - mundane
-  - mushy
-  - musty
-  - muted
-  - mysterious
-  - naiive
-  - narrow-minded
-  - nasty
-  - Native American
-  - natural
-  - naughty
-  - nautical
-  - nearsighted
-  - needy
-  - negative
-  - neglected
-  - negligible
-  - neighboring
-  - nervous
-  - new
   - nice
-  - nifty
-  - nimble
-  - nocturnal
-  - noisy
-  - non-functioning
-  - nonstop
-  - noteworthy
-  - novel-writing
-  - noxious
-  - numb
-  - nutritious
-  - nutty
-  - obedient
-  - obese
-  - objectively good
-  - oblong
-  - obsessive
-  - obvious
-  - odd
-  - oddball
-  - odious
-  - offbeat
-  - offensive
-  - oily
-  - old
-  - old-fashioned
   - open-minded
   - optimistic
-  - orange
-  - origami
-  - ornate
-  - ornery
-  - outgoing
-  - outlandish
-  - outrageous
-  - outstanding
-  - oval
-  - over-aware
-  - over-dramatic
-  - overactive
-  - overburdened
-  - overcooked
-  - overjoyed
-  - overly-attached
-  - overly-emotional
-  - painted
-  - palatable
-  - pale
+
   - paltry
   - passionate
-  - pastel
   - peaceful
-  - peppery
   - perfect
-  - perfumed
   - perky
   - pesky
   - pessimistic
   - petty
   - phony
-  - photorealistic
-  - pink
   - pitiful
-  - pixellated
-  - plastic
   - playful
   - pleasant
   - pleased
@@ -1031,6 +615,107 @@ negative:
   - dumb
   - dunderheaded
   - embarrassed
+  - emotionless
+  - envious
+  - exhausted
+  - failing
+  - faint
+  - fake
+  - fickle
+  - filthy
+  - flaky
+  - flawed
+  - flimsy
+  - flippant
+  - flustered
+  - foolhardy
+  - foolish
+  - forceful
+  - frail
+  - frightened
+  - frightening
+  - frigid
+  - frivolous
+  - fumbling
+  - fuming
+  - fussy
+  - glaring
+  - glassy-eyed
+  - glum
+  - greedy
+  - gross
+  - grouchy
+  - grubby
+  - grumbling
+  - grumpy
+  - guilty
+  - guilty-looking
+  - gullible
+  - harmful
+  - harsh
+  - hasty
+  - helpless
+  - hidden
+  - hoarse
+  - hollow
+  - humiliating
+  - hungry
+  - hurtful
+  - icky
+  - idiotic
+  - ignorant
+  - ill
+  - ill-informed
+  - illiterate
+  - imbecillic
+  - imperfect
+  - impish
+  - impolite
+  - impractical
+  - impressionable
+  - improbable
+  - inexperienced
+  - inferior
+  - insecure
+  - insignificant
+  - intrusive
+  - irresponsible
+  - irritating
+  - itchy
+  - jaded
+  - jealous
+  - klutzy
+  - lame
+  - lazy
+  - listless
+  - lonely
+  - lonesome
+  - lost
+  - lowbrow
+  - lying
+  - meager
+  - mean
+  - messy
+  - mindless
+  - miserly
+  - misguided
+  - moronic
+  - mundane
+  - musty
+  - naiive
+  - narrow-minded
+  - nasty
+  - naughty
+  - needy
+  - negative
+  - neglected
+  - negligible
+  - nervous
+  - noxious
+  - numb
+  - obsessive
+  - odious
+  - offensive
 fearful:
   - abhorrent
   - acidic
@@ -1054,6 +739,38 @@ fearful:
   - disgusting
   - distorted
   - eerie
+  - enraged
+  - fatal
+  - fearful
+  - fiendish
+  - forsaken
+  - ghostly
+  - grave
+  - grotesque
+  - gruesome
+  - growling
+  - hateful
+  - haunting
+  - hideous
+  - horrible
+  - ill-fated
+  - impossible
+  - impure
+  - incomparable
+  - infamous
+  - infinite number of
+  - insidious
+  - jagged
+  - jeering
+  - livid
+  - loathsome
+  - lumbering
+  - mad
+  - menacing
+  - miserable
+  - monstrous
+  - mortified
+  - mysterious
 excited:
   - admirable
   - admired
@@ -1078,6 +795,50 @@ excited:
   - delirious
   - ecstatic
   - elated
+  - enchanted
+  - enchanting
+  - energetic
+  - enlightened
+  - euphoric
+  - everlasting
+  - evil
+  - excited
+  - exciting
+  - expert
+  - famous
+  - fancy
+  - fantastic
+  - giddy
+  - gifted
+  - gleeful
+  - gorgeous
+  - graceful
+  - heavenly
+  - ideal
+  - idealistic
+  - idolized
+  - illustrious
+  - immaculate
+  - immaterial
+  - impassioned
+  - impressive
+  - incredible
+  - infatuated
+  - ingenious
+  - ironclad
+  - joyful
+  - joyous
+  - jubilant
+  - luxurious
+  - magnificent
+  - majestic
+  - major
+  - marvelous
+  - noteworthy
+  - objectively good
+  - outrageous
+  - outstanding
+  - overjoyed
 neutral:
   - academic
   - acrobatic
@@ -1145,3 +906,156 @@ neutral:
   - elastic
   - elderly
   - elliptical
+  - empty
+  - enormous
+  - ethereal
+  - extra-large
+  - extra-small
+  - fast
+  - fat
+  - feminine
+  - firm
+  - flickering
+  - floating
+  - flowery
+  - fluffy
+  - fluid
+  - flying
+  - forked
+  - formal
+  - fragile
+  - fragrant
+  - frayed
+  - frilly
+  - frizzy
+  - frosty
+  - frozen
+  - frugal
+  - full-grown
+  - fully-functional
+  - fuzzy
+  - gargantuan
+  - gaseous
+  - giant
+  - gigantic
+  - glamorous
+  - glass
+  - gleaming
+  - glistening
+  - glittering
+  - glittery
+  - glossy
+  - gold
+  - golden
+  - gray
+  - grayscale
+  - green
+  - grizzled
+  - growing
+  - gummy
+  - hairy
+  - hard
+  - hard-to-find
+  - harmless
+  - heavy
+  - hefty
+  - hot
+  - huge
+  - humming
+  - humongous
+  - husky
+  - icy
+  - idle
+  - imaginary
+  - immense
+  - impartial
+  - inconsequential
+  - jingling
+  - jittery
+  - juicy
+  - jumbo
+  - jumping
+  - jumpy
+  - juvenile
+  - kaleidoscopic
+  - keen-eyed
+  - knobby
+  - knotted
+  - knowledgeable
+  - kooky
+  - kosher
+  - lanky
+  - large
+  - leafy
+  - lean
+  - lightweight
+  - limp
+  - limping
+  - liquid
+  - little
+  - living
+  - lone
+  - long
+  - long-winded
+  - loose
+  - lopsided
+  - loud
+  - luminous
+  - lumpy
+  - lustrous
+  - lyrical
+  - made-up
+  - magenta
+  - mammoth
+  - manly
+  - masculine
+  - massive
+  - mature
+  - meaty
+  - medical
+  - melodic
+  - metallic
+  - miniature
+  - minty
+  - misty
+  - modern
+  - moist
+  - motherly
+  - motionless
+  - muddy
+  - muffled
+  - multicolored
+  - mushy
+  - muted
+  - natural
+  - nautical
+  - nearsighted
+  - neighboring
+  - noisy
+  - nonstop
+  - new
+  - nifty
+  - nimble
+  - nocturnal
+  - obedient
+  - obese
+  - oblong
+  - obvious
+  - odd
+  - oddball
+  - offbeat
+  - oily
+  - old
+  - old-fashioned
+  - orange
+  - ornate
+  - ornery
+  - outgoing
+  - outlandish
+  - oval
+  - painted
+  - pale
+  - pastel
+  - peppery
+  - perfumed
+  - pink
