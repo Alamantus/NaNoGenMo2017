@@ -1,7 +1,7 @@
-const randomArrayValue = (array, random = Math.random) => {
+export const randomArrayValue = (array, random = Math.random) => {
   return array[Math.floor(random() * array.length)];
 }
 
-module.exports = {
-  randomArrayValue,
-};
+export const capitalize = word => {
+  return word.substr(0, 1).toUppercase() + word.substr(1);
+}
