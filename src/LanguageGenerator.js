@@ -11,7 +11,7 @@ class LanguageGenerator {
     this.phonotactics = this.generatePhonotactics();
   }
 
-  generatePhonology () {
+  generatePhonology (tries = 0) {
     const possibleConsonants = ['b', 'c', 'd', 'f', 'g', 'h', 'j', 'k', 'l', 'm', 'n', 'p', 'q', 'r', 's', 't', 'v', 'w', 'x', 'y', 'z'],
       possibleVowels = ['a', 'e', 'i', 'o', 'u'],
       consonants = [],
@@ -21,8 +21,12 @@ class LanguageGenerator {
       if (this.random() > 0.5) consonants.push(letter);
     });
     possibleVowels.forEach(letter => {
-      if (this.random() > 0.5) vowels.push(letter);
+      if (this.random() > 0.25) vowels.push(letter);
     });
+
+    if (vowels.length < 1 && tries < MAX_RETRIES) {
+      return this.generatePhonology(tries + 1);
+    }
 
     return {
       consonants,
@@ -30,21 +34,21 @@ class LanguageGenerator {
     };
   }
 
-  generatePhonotactics () {
+  generatePhonotactics (tries = 0) {
     const onset = [],
       nucleus = [],
       coda = [],
       overlapRestrictions = [];
     const maxSyllables = Math.ceil(this.random() * MAX_SYLLABLES);
-    const blendConsonants = this.random() > 0.75;
-    const blendVowels = this.random() > 0.5;
+    const blendConsonants = this.random() > 0.7;
+    const blendVowels = this.random() > 0.2;
 
-    if (this.random() > 0.5) onset.push(null);
-    if (this.random() > 0.5) coda.push(null);
+    if (this.random() < 0.7) onset.push(null);
+    if (this.random() < 0.85) coda.push(null);
 
     this.phonology.consonants.forEach(letter => {
       if (this.random() > 0.5) onset.push(letter);
-      if (this.random() > 0.5) nucleus.push(letter);
+      if (this.random() < 0.15) nucleus.push(letter);
       if (this.random() > 0.5) coda.push(letter);
 
       this.phonology.consonants.forEach(pairedLetter => {
@@ -57,7 +61,7 @@ class LanguageGenerator {
 
     this.phonology.vowels.forEach(letter => {
       if (this.random() > 0.5) onset.push(letter);
-      if (this.random() > 0.5) nucleus.push(letter);
+      if (this.random() > 0.15) nucleus.push(letter);
       if (this.random() > 0.5) coda.push(letter);
 
       this.phonology.consonants.forEach(pairedLetter => {
@@ -67,6 +71,10 @@ class LanguageGenerator {
         if (this.random() < 0.2) overlapRestrictions.push(letter + pairedLetter);
       });
     });
+
+    if (nucleus.length < 1 && tries < MAX_RETRIES) {
+      return this.generatePhonotactics(tries + 1);
+    }
 
     return {
       onset,
@@ -108,7 +116,8 @@ class LanguageGenerator {
     prefix = '',
     suffix = '',
   } = {}) {
-    const numberOfSyllables = numSyllables || Math.ceil(this.random() * this.phonotactics.maxSyllables);
+    const syllableDistribution = this.phonotactics.maxSyllables / (this.random() < 0.7 ? 2 : 1);
+    const numberOfSyllables = numSyllables || Math.ceil(this.random() * syllableDistribution);
     let syllables = [this.generateSyllable()];
 
     for (let i = 1; i < numberOfSyllables; i++) {
