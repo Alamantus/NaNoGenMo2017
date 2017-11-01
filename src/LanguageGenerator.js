@@ -130,6 +130,7 @@ class LanguageGenerator {
   splitNonBlendedLetters (word) {
     if (!this.phonotactics.blendConsonants || ! this.phonotactics.blendVowels) {
       let fixedWord = '';
+
       word.split('').forEach((letter, index) => {
         fixedWord += letter;
 
@@ -138,7 +139,7 @@ class LanguageGenerator {
           const breakConsonants = this.phonology.consonants.includes(letter)
             && this.phonology.consonants.includes(nextLetter)
             && ! this.phonotactics.blendConsonants;
-          const breakVowel = this.phonology.vowels.includes(letter)
+          const breakVowels = this.phonology.vowels.includes(letter)
             && this.phonology.vowels.includes(nextLetter)
             && ! this.phonotactics.blendVowels;
 
@@ -146,7 +147,7 @@ class LanguageGenerator {
             fixedWord += '\'';
           }
         }
-      }
+      });
 
       return fixedWord;
     }
@@ -155,7 +156,7 @@ class LanguageGenerator {
   }
 
   test () {
-    return this.generateSyllable();
+    return this.generateWord();
   }
 }
 
