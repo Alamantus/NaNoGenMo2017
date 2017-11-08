@@ -8,30 +8,30 @@ export default ({
 } = {}) => {
   let sentence = '';
 
-  if (subject.hasOwnProperty('adjective')) {
+  if (subject.adjective) {
     sentence += subject.adjective + ' ';
   }
-  if (subject.hasOwnProperty('noun')) {
+  if (subject.noun) {
     sentence += subject.noun + ' ';
   }
-  if (subject.hasOwnProperty('prepositional')) {
+  if (subject.prepositional) {
     sentence += subject.prepositional + ' ';
   }
 
-  if (action.hasOwnProperty('adverb')) {
+  if (action.adverb) {
     sentence += action.adverb + ' ';
   }
-  if (action.hasOwnProperty('verb')) {
+  if (action.verb) {
     sentence += action.verb + ' ';
   }
 
-  if (object.hasOwnProperty('adjective')) {
+  if (object.adjective) {
     sentence += object.adjective + ' ';
   }
-  if (object.hasOwnProperty('noun')) {
+  if (object.noun) {
     sentence += object.noun + ' ';
   }
-  if (object.hasOwnProperty('prepositional')) {
+  if (object.prepositional) {
     sentence += object.prepositional + ' ';
   }
 
