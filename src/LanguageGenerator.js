@@ -1,4 +1,4 @@
-import {randomArrayValue} from './helpers';
+import {randomArrayValue, capitalize} from './helpers';
 import {
   MAX_RETRIES,
   MAX_SYLLABLES,
@@ -12,6 +12,7 @@ class LanguageGenerator {
     this.randomArrayValue = (array) => randomArrayValue(array, this.random);
     this.phonology = this.generatePhonology();
     this.phonotactics = this.generatePhonotactics();
+    this.name = capitalize(this.generateWord({numSyllables: 2}));
     this.lexicon = this.generateLexicon();
   }
 
