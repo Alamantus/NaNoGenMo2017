@@ -115,6 +115,26 @@ class ToneManager {
     return this.getNeutralWord();
   }
 
+  chooseOppositeToneWord (wordGroup) {
+    switch (this.currentTone) {
+      case EXCITED: {
+        return this.getFearfulWord(wordGroup);
+      }
+      case POSITIVE: {
+        return this.getNegativeWord(wordGroup);
+      }
+      case NEGATIVE: {
+        return this.getPositiveWord(wordGroup);
+      }
+      case FEARFUL: {
+        return this.getExcitedWord(wordGroup);
+      }
+    }
+
+    // if something goes wrong
+    return this.getNeutralWord();
+  }
+
   shakeThingsUp () {
     const adjustAmount = TONE_ADJUST_AMOUNT * (Math.floor(this.random() * 3) + 1);
     if (this.toneLevel >= 0.5) {
@@ -147,6 +167,30 @@ class ToneManager {
   getFearfulWord (wordGroup) {
     const fearfulWords = wordGroups[wordGroup].fearful;
     return fearfulWords[Math.floor(this.random() * fearfulWords.length)];
+  }
+
+  getRandomWord (wordGroup) {
+    switch (Math.floor(this.random() * 5)) {
+      case 0: {
+        return this.getFearfulWord(wordGroup);
+      }
+      case 1: {
+        return this.getNegativeWord(wordGroup);
+      }
+      case 2:
+      default: {
+        return this.getNeutralWord(wordGroup);
+      }
+      case 3: {
+        return this.getPositiveWord(wordGroup);
+      }
+      case 4: {
+        return this.getExcitedWord(wordGroup);
+      }
+    }
+
+    // if something goes wrong
+    return this.getNeutralWord();
   }
 
   adjustToneLevel (adjustment) {
